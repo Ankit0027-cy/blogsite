@@ -4,8 +4,10 @@ from flask_mail import Mail
 import json
 from datetime import datetime
 import os
+from flask import Flask,redirect
 from werkzeug import secure_filename
-
+from flask import session
+import math
 with open('config.json', 'r') as c:
     params = json.load(c)["params"]
 
@@ -109,8 +111,9 @@ def dashboard():
             return render_template("dashboard.html", params=params, posts=posts)
     else:
         return render_template("login.html", params=params)
-@app.route("/edit/<string:sno>" , methods=['GET', 'POST'])
+@app.route("/edit/<string: sno>" , methods=['GET', 'POST'])
 def edit():
+    sno=sno
     if "user" in session and session['user']==params['admin_user']:
         if request.method=="POST":
             box_title = request.form.get('title')
@@ -137,7 +140,7 @@ def edit():
 
     post = Posts.query.filter_by(sno=sno).first()
     return render_template('edit.html', params=params, post=post)
-@app.route("/uploader", method=['GET',POST] )
+@app.route("/uploader", method=['GET','POST'] )
 def uploader():
     if "user" in session and session['user']==params['admin_user']:
         if request.method=='POST':
