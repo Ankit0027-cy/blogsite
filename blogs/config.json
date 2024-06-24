@@ -1,0 +1,23 @@
+{
+    "params":
+    {
+      "local_server":"True",
+      "local_uri": "mysql://root:@localhost/coding",
+      "prod_uri":"mysql://root:@localhost/coding",
+      "fb_url":"https://facebook.com/coding",
+      "tw_url":"https://twitter.com/coding",
+      "gh_url": "https://github.com/coding",
+      "blog_name": "Coding ",
+      "tag_line": "Heaven for programmers",
+      "gmail-user":"your-email@gmail.com",
+      "gmail-password":"gmailpassword",
+      "about_text": "Hi my name is abcd and I create programming tutorials and I am a good boy",
+      "no_of_posts": 2,
+      "login_image":"login.svg",
+      "admin_user":"abcd",
+      "admin_password": "subscribenow"
+      
+    }
+  
+  }
+  
